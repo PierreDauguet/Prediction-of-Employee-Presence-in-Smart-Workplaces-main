@@ -11,7 +11,7 @@ import sys
 from torch.optim import Adam
 
 
-df = pd.read_csv("data/df_venues_processed.csv",sep=";")
+df = pd.read_csv("../data/df_venues_processed.csv", sep=";")
 
 
 

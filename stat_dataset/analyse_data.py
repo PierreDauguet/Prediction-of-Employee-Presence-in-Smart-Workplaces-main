@@ -10,7 +10,7 @@ import chardet
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
-PATH = "data/df_venues_processed.csv"
+PATH = "data/df_venues_processed_selected.csv"
 
 with open(PATH, "rb") as f:
     enc = chardet.detect(f.read()).get("encoding") or "utf-8"
@@ -170,6 +170,8 @@ plt.axis("equal")
 plt.tight_layout()
 plt.show()
 
+test = df["GLOBAL"] - (df["D1"] + df["D2"] + df["D3"] + df["D4"])
+print(test.abs().max())
 
 # ----------------------------
 # 6) (Optionnel) Export CSV propre en UTF-8 (pour ne plus jamais avoir le souci)
